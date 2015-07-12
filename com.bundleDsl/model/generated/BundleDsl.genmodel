@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.bundleDsl/src-gen" editDirectory="/com.bundleDsl.edit/src"
+    editorDirectory="/com.bundleDsl.editor/src" modelPluginID="com.bundleDsl" forceOverwrite="true"
+    modelName="BundleDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="com.bundleDsl.edit"
+    editorPluginID="com.bundleDsl.editor" runtimeVersion="2.10">
+  <genPackages prefix="BundleDsl" basePackage="com.bundleDsl" disposableProviderFactory="true"
+      fileExtensions="bdsl" ecorePackage="BundleDsl.ecore#/">
+    <genClasses ecoreClass="BundleDsl.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//Model/bundle"/>
+    </genClasses>
+    <genClasses ecoreClass="BundleDsl.ecore#//Bundle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Bundle/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//Bundle/cars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//Bundle/services"/>
+    </genClasses>
+    <genClasses ecoreClass="BundleDsl.ecore#//Car">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Car/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Car/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Car/used"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//Car/extras"/>
+    </genClasses>
+    <genClasses ecoreClass="BundleDsl.ecore#//Extra">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Extra/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Extra/description"/>
+    </genClasses>
+    <genClasses ecoreClass="BundleDsl.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BundleDsl.ecore#//Service/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//Service/carExtras"/>
+    </genClasses>
+    <genClasses ecoreClass="BundleDsl.ecore#//CarExtra">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//CarExtra/car"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BundleDsl.ecore#//CarExtra/extras"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

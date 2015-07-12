@@ -1,0 +1,32 @@
+grammar com.bundleDsl.BundleDsl with org.eclipse.xtext.common.Terminals
+
+generate bundleDsl "http://www.bundleDsl.com/BundleDsl"
+
+Model:
+	bundle=Bundle;
+	
+Bundle:
+	'Bundle' name=ID '{'
+		cars+=Car+
+		services+=Service*
+	'}'
+;
+
+Car:
+	'Car' name=ID  '(' 'type' type=STRING (used?='used')? ')' '{'
+		extras+=Extra+ // at least one. No information about that was found
+	'}'
+;
+
+Extra:
+	name=ID '=' description=STRING
+;
+
+
+Service:
+	'Service' name=STRING 'for' carExtras+=CarExtra+ // multiplicity not stated
+;
+
+CarExtra:
+	car=[Car] ( '(' extras+=[Extra]+ ')' )? // scope provider for car needed here
+;
